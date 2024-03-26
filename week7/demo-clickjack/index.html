@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <title>100% Real Login Page</title>
+
+    <style>
+        .over {
+            z-index: 10000;
+            position: relative;
+        }
+
+        #frame {
+            z-index: 5000;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <nav>
+            <ul>
+                <li><strong>100% Real Login Page</strong></li>
+            </ul>
+            <ul>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            </ul>
+        </nav>
+
+        <form>
+            <input class="over" name="username" type="text" placeholder="Username">
+            <input class="over" name="password" type="password" placeholder="Password">
+            <input type="submit" value="Login">
+        </form>
+
+        <iframe src="https://xkcd.com" id="frame"></iframe>
+    </main>
+</body>
+
+</html>
