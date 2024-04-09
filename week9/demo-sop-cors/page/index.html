@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div>
+        Missing CORS Headers:
+        <span id="missing-cors"></span>
+    </div>
+
+    <script>
+        fetch("http://localhost:8002/missing-cors.json")
+            .then(r => r.text())
+            .then(d => document.getElementById("missing-cors").appendChild(document.createTextNode(d)))
+            .catch(e => document.getElementById("missing-cors").appendChild(document.createTextNode(e.message)))
+    </script>
+
+    <div>
+        Wrong CORS Headers:
+        <span id="wrong-cors"></span>
+    </div>
+
+    <script>
+        fetch("http://localhost:8002/wrong-cors.json")
+            .then(r => r.text())
+            .then(d => document.getElementById("wrong-cors").appendChild(document.createTextNode(d)))
+            .catch(e => document.getElementById("wrong-cors").appendChild(document.createTextNode(e.message)))
+    </script>
+
+    <div>
+        With CORS Headers:
+        <span id="cors"></span>
+    </div>
+
+    <script>
+        fetch("http://localhost:8002/cors.json")
+            .then(r => r.text())
+            .then(d => document.getElementById("cors").appendChild(document.createTextNode(d)))
+            .catch(e => document.getElementById("cors").appendChild(document.createTextNode(e.message)))
+    </script>
+
+    <div>
+        POST:
+        <span id="post"></span>
+    </div>
+
+    <script>
+        fetch("http://localhost:8002/post.json", {method: "POST"})
+            .then(r => r.text())
+            .then(d => document.getElementById("post").appendChild(document.createTextNode(d)))
+            .catch(e => document.getElementById("post").appendChild(document.createTextNode(e.message)))
+    </script>
+</body>
+
+</html>
